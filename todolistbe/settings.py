@@ -147,3 +147,9 @@ JWT_AUTH = {
     'ACCESS_TOKEN_LIFETIME': datetime.timedelta(days=3),
     "JWT_EXPIRATION_DELTA": datetime.timedelta(days=3)
 }
+
+# HSTS config
+SECURE_HSTS_SECONDS = 2592000 # Unit is seconds = 30 days
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
