@@ -30,7 +30,11 @@ except KeyError as e:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Allowed_hosts to be changed in production with os environment variables
+try:
+    ALLOWED_HOSTS = os.environ["ALLOWED_HOSTS"]
+except KeyError as e:
+    ALLOWED_HOSTS = []
 
 
 # Application definition
